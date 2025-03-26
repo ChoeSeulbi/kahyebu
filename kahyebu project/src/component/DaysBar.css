@@ -1,0 +1,35 @@
+.DaysBar {
+  display: flex;
+  gap: 10px;
+  overflow-x: hidden;
+  padding: 10px 15px;
+  position: relative;
+}
+.day_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.day_wrapper > * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
+}
+.day_wrapper span {
+  font-size: 12px;
+  margin-bottom: 4px;
+  color: #aaa;
+}
+.day_btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.day_btn.active {
+  background-color: rgb(71, 71, 255);
+  color: #fff;
+}
