@@ -1,0 +1,17 @@
+.Button {
+  background-color: #ededed;
+  padding: 10px 20px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.Button_ACTIVE {
+  background-color: rgb(71, 71, 255);
+  color: #fff;
+}
+.btn_w200 {
+  width: 200px;
+}
+.btn_w200:hover {
+  background-color: rgb(71, 71, 255);
+  color: #fff;
+}
