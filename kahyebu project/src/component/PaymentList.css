@@ -1,0 +1,13 @@
+.PaymentList {
+  margin: 20px 0;
+}
+.PaymentList .menu_bar {
+  padding: 0 20px;
+}
+.PaymentList .menu_bar select {
+  background-color: #fff;
+  border-color: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
