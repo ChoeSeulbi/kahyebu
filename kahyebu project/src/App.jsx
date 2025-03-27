@@ -16,18 +16,21 @@ const mockData = [
     createdDate: new Date("2025-03-26").getTime(),
     expenses: "100",
     content: "쫀드기",
+    typeId: 2,
   },
   {
     id: 2,
     createdDate: new Date("2025-03-27").getTime(),
     expenses: "1,000",
     content: "커피",
+    typeId: 1,
   },
   {
     id: 3,
-    createdDate: new Date("2025-03-10").getTime(),
+    createdDate: new Date("2025-02-10").getTime(),
     expenses: "8,000",
     content: "점심",
+    typeId: 2,
   },
 ];
 

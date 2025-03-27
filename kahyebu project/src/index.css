@@ -23,7 +23,7 @@ body {
 
 #root {
   background-color: #fff;
-  max-width: 500px;
+  max-width: 450px;
   width: 100%;
   margin: 0 auto;
   height: calc(100vh - 60px);
