@@ -36,6 +36,7 @@ const DaysBar = () => {
   const handleMouseUp = () => {
     setIsDragging(false);
   };
+
   return (
     <div
       className="DaysBar"

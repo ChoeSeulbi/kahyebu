@@ -1,26 +1,36 @@
 import {useReducer, useRef, createContext} from "react";
 import {Routes, Route, Link, useNavigate} from "react-router-dom";
 import Home from "./page/Home";
-import List from "./page/List";
+import Payment from "./page/Payment";
+// import List from "./page/List";
 import Edit from "./page/Edit";
 import Add from "./page/Add";
-import Login from "./page/Login";
-import Signup from "./page/Signup";
+// import Login from "./page/Login";
+// import Signup from "./page/Signup";
 import Notfound from "./page/Notfound";
 import "./App.css";
 
 const mockData = [
   {
     id: 1,
-    createdDate: new Date().getTime(),
-    expenses: 100,
+    createdDate: new Date("2025-03-26").getTime(),
+    expenses: "100",
     content: "쫀드기",
+    typeId: 2,
   },
   {
     id: 2,
-    createdDate: new Date().getTime(),
-    expenses: 1000,
+    createdDate: new Date("2025-03-27").getTime(),
+    expenses: "1,000",
     content: "커피",
+    typeId: 1,
+  },
+  {
+    id: 3,
+    createdDate: new Date("2025-02-10").getTime(),
+    expenses: "8,000",
+    content: "점심",
+    typeId: 2,
   },
 ];
 
@@ -39,8 +49,8 @@ function reducer(state, action) {
   }
 }
 
-const PaymentStateContext = createContext();
-const PaymentDispatchContext = createContext();
+export const PaymentStateContext = createContext();
+export const PaymentDispatchContext = createContext();
 
 function App() {
   const [data, dispatch] = useReducer(reducer, mockData);
@@ -90,11 +100,12 @@ function App() {
           }}>
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/list" element={<List />}></Route>
+            <Route path="/payment/:id" element={<Payment />}></Route>
+            {/* <Route path="/list" element={<List />}></Route> */}
             <Route path="/add" element={<Add />}></Route>
             <Route path="/edit/:id" element={<Edit />}></Route>
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/signup" element={<Signup />}></Route>
+            {/* <Route path="/login" element={<Login />}></Route> */}
+            {/* <Route path="/signup" element={<Signup />}></Route> */}
             <Route path="*" element={<Notfound />}></Route>
           </Routes>
         </PaymentDispatchContext.Provider>

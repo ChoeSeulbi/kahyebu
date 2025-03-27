@@ -1,0 +1,19 @@
+.PaymentList {
+  /* padding: 20px 0; */
+  /* background-color: pink; */
+}
+.PaymentList .menu_bar {
+  padding: 15px 20px;
+  display: flex;
+  gap: 10px;
+}
+.PaymentList .menu_bar select {
+  background-color: #fff;
+  border-color: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.PaymentList .menu_bar button {
+  flex: 1;
+}

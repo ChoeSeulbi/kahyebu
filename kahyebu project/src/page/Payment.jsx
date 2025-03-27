@@ -26,7 +26,7 @@ const getDailyData = (pivotDate, data) => {
     (item) => beginTime <= item.createdDate && item.createdDate <= endTime
   );
 };
-const List = () => {
+const Payment = () => {
   const data = useContext(PaymentStateContext);
   const [pivotDate, setPivotDate] = useState(new Date());
   const dailyData = getDailyData(pivotDate, data);
@@ -35,12 +35,12 @@ const List = () => {
     <div>
       <Header
         title={`${pivotDate.getFullYear()}년 ${pivotDate.getMonth() + 1}월`}
-        leftChild={<Button text={"지출"} />}
-        rightChild={<Button text={"카드"} type={"ACTIVE"} />}
+        // leftChild={leftChild}
+        // rightChild={<Button text={"카드"} type={"ACTIVE"} />}
       />
 
       <PaymentList data={dailyData}></PaymentList>
     </div>
   );
 };
-export default List;
+export default Payment;
