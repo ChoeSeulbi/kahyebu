@@ -1,5 +1,7 @@
 import "./Header.css";
+import {useNavigate} from "react-router-dom";
 const Header = ({title, onIncreaseMonth, onDecreaseMonth, page}) => {
+  const nav = useNavigate();
   const renderHeaderContent = () => {
     switch (page) {
       case "home":
@@ -16,9 +18,12 @@ const Header = ({title, onIncreaseMonth, onDecreaseMonth, page}) => {
         );
       case "add":
         return (
-          <>
+          <div className="add_header">
+            <div>
+              <button onClick={() => nav(-1)} className="arrow"></button>
+            </div>
             <div className="header_title">{title}</div>
-          </>
+          </div>
         );
     }
   };

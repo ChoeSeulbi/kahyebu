@@ -1,6 +1,6 @@
 import {useNavigate} from "react-router-dom";
 import ic_edit from "./../assets/ic_edit.png";
-import {getTypeImg} from "../util/get-emotion-image";
+import {getTypeImg} from "../util/get-type-image";
 import "./PaymentItem.css";
 const PaymentItem = ({id, createdDate, content, expenses, typeId}) => {
   const nav = useNavigate();
