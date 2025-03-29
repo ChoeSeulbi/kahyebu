@@ -57,7 +57,7 @@ function App() {
   const idRef = useRef(3);
 
   // 새로운 리스트 추가
-  const onCreate = (createdDate, expenses, content) => {
+  const onCreate = (createdDate, expenses, content, typeId) => {
     dispatch({
       type: "CREATE",
       data: {
@@ -65,11 +65,12 @@ function App() {
         createdDate,
         expenses,
         content,
+        typeId,
       },
     });
   };
   // 기존 리스트 수정
-  const onUpdate = (id, createdDate, expenses, content) => {
+  const onUpdate = (id, createdDate, expenses, content, typeId) => {
     dispatch({
       type: "UPDATE",
       data: {
@@ -77,6 +78,7 @@ function App() {
         createdDate,
         expenses,
         content,
+        typeId,
       },
     });
   };

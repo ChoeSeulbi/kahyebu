@@ -1,0 +1,39 @@
+.Editor {
+  /* position: relative; */
+  height: calc(100% - 76px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.Editor > section {
+  padding: 25px;
+}
+.Editor > section > h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  /* padding: 0 5px; */
+}
+.Editor > section > input {
+  padding: 10px;
+  /* border: none; */
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+.Editor .type_list_wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+.Editor .content_section input {
+  width: 100%;
+  padding: 12px 10px;
+}
+.Editor .button_section {
+  /* background-color: pink; */
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  /* position: absolute; */
+  /* width: 100%; */
+  /* bottom: 0; */
+}

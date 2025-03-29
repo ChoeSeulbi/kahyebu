@@ -32,3 +32,23 @@
 .arrow:hover {
   border-color: rgb(71, 71, 255);
 }
+.add_header,
+.edit_header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.add_header .arrow,
+.edit_header .arrow {
+  transform: rotate(-135deg);
+}
+.add_header .header_title {
+  margin: 0 auto;
+  text-align: center;
+}
+.edit_header .header_title {
+  width: auto;
+  margin: 0 auto;
+  transform: translateX(20px);
+  /* background-color: yellow; */
+}
