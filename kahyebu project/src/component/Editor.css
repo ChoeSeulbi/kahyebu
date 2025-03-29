@@ -1,6 +1,6 @@
 .Editor {
   /* position: relative; */
-  height: calc(100% - 63px);
+  height: calc(100% - 76px);
   overflow-y: auto;
   display: flex;
   flex-direction: column;

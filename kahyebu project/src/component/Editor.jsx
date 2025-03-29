@@ -1,8 +1,8 @@
 import "./Editor.css";
 import TypeItem from "./TypeItem";
 import Button from "./Button";
-import {useState} from "react";
-
+import {useState, useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 const typeList = [
   {
     typeId: 1,
@@ -37,27 +37,30 @@ const getStringedDate = (targetDate) => {
   }
   return `${year}-${month}-${date}`;
 };
-const Editor = () => {
+const Editor = ({onSubmit, initData}) => {
+  const nav = useNavigate();
+
   const [input, setInput] = useState({
     createdDate: new Date(),
     typeId: 3,
     content: "",
-    cost: "",
+    expenses: "",
   });
-  //   const [cost, setCost] = useState("");
-
-  //   const onChangeCost = (e) => {
-  //     let value = e.target.value.replace(/,/g, "");
-  //     if (!/^\d*$/.test(value)) return;
-  //     setCost(formatNumber(value));
-  //   };
+  useEffect(() => {
+    if (initData) {
+      setInput({
+        ...initData,
+        createdDate: new Date(Number(initData.createdDate)),
+      });
+    }
+  }, [initData]);
   const onChangeInput = (e) => {
     let name = e.target.name;
     let value = e.target.value;
     if (name === "createdDate") {
       value = new Date(value);
     }
-    if (name === "cost") {
+    if (name === "expenses") {
       value = value.replace(/,/g, ""); // 기존 콤마 제거
       if (!/^\d*$/.test(value)) return; // 숫자만 입력 가능하도록 제한
       value = formatNumber(value); // 3자리마다 , 추가된 값으로 변환
@@ -66,6 +69,9 @@ const Editor = () => {
       ...input,
       [name]: value,
     });
+  };
+  const onClickSubmitButton = () => {
+    onSubmit(input);
   };
   const formatNumber = (num) => {
     return num.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -105,10 +111,10 @@ const Editor = () => {
         <h4>지출 금액</h4>
         <input
           onChange={onChangeInput}
-          value={input.cost}
+          value={input.expenses}
           type="text"
           placeholder="지출 금액"
-          name="cost"
+          name="expenses"
         />
       </section>
       <section className="content_section">
@@ -122,8 +128,8 @@ const Editor = () => {
         />
       </section>
       <section className="button_section">
-        <Button text={"취소"} />
-        <Button text={"저장"} type={"ACTIVE"} />
+        <Button text={"취소"} onClick={() => nav(-1)} />
+        <Button text={"저장"} type={"ACTIVE"} onClick={onClickSubmitButton} />
       </section>
     </div>
   );
